@@ -1,0 +1,50 @@
+.logo {
+  width: 35px;
+}
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  margin-bottom: 30px;
+}
+.logoWrapper img {
+    cursor: pointer;
+}
+.avatarWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin-right: 20px;
+}
+
+.avatarWrapper img {
+  transform: scale(1.10);
+  transform-origin: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  flex: 1;
+}
+
+.sider {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+}
+
+.logoutWrapper {
+  margin-top: auto;
+  padding: 12px 16px;
+}

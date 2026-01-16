@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card {
+  width: 320px;
+  background-color: rgb(252, 252, 252);
+  box-shadow: 0 1px 5px rgba(118, 118, 118, 0.137);
+}
