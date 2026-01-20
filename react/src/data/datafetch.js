@@ -1,4 +1,4 @@
-import seed from './seed.json';
+const API_BASE = 'http://localhost:3000';
 
 function getlocalstorage(key, seeddata) {
   const stored = localStorage.getItem(key);
@@ -7,39 +7,50 @@ function getlocalstorage(key, seeddata) {
   return seeddata;
 }
 
-// PRODUCTS
-export function getproducts() {
-  return getlocalstorage('products', seed.products);
+async function fetchJSON(path) {
+  const res = await fetch(`${API_BASE}${path}`);
+  if (!res.ok) {
+    throw new Error(`API error ${res.status}`);
+  }
+  return res.json();
 }
+
 export function saveproducts(products) {
   localStorage.setItem('products', JSON.stringify(products));
 }
 
-// ORDERS
-export function getorders() {
-  return getlocalstorage('orders', seed.orders);
-}
 export function saveorders(orders) {
   localStorage.setItem('orders', JSON.stringify(orders));
 }
 
-// CLIENTS
-export function getclients() {
-  return getlocalstorage('clients', seed.clients);
-}
 export function saveclients(clients) {
   localStorage.setItem('clients', JSON.stringify(clients));
 }
 
-// CATEGORIES
-export function getcategories() {
-  return getlocalstorage('categories', seed.categories);
-}
 export function savecategories(categories) {
   localStorage.setItem('categories', JSON.stringify(categories));
 }
 
+export async function getproducts() {
+  return fetchJSON('/api/products');
+}
+
+// ORDERS
+export async function getorders() {
+  return fetchJSON('/api/orders');
+}
+
+// CLIENTS
+export async function getclients() {
+  return fetchJSON('/api/clients');
+}
+
+// CATEGORIES
+export async function getcategories() {
+  return fetchJSON('/api/categories');
+}
+
 // DAILY STATS
-export function getdailystats() {
-  return getlocalstorage('dailyStats', seed.dailyStats);
+export async function getdailystats() {
+  return fetchJSON('/api/daily-stats');
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import style from './categories.module.css';
 import { Button, Table, Space, Tooltip, Modal, Form, Input } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import { getcategories, savecategories } from '../../data/seedextract.js';
+import { getcategories, savecategories } from '../../data/datafetch.js';
 
 export default function Categories() {
   const [categories, setCategories] = useState(() => getcategories());

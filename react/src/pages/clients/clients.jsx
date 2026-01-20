@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import style from './clients.module.css';
 import { Button, Table, Space, Tooltip, Modal, Form, Input } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import { getclients, saveclients } from '../../data/seedextract.js';
+import { getclients, saveclients } from '../../data/datafetch.js';
 
 export default function Clients() {
     const [clients, setClients] = useState(() => getclients());

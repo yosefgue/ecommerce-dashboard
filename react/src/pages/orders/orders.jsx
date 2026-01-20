@@ -1,14 +1,14 @@
 import style from './orders.module.css';
 import { useState } from 'react';
 import { Table, Tag, Select } from 'antd';
-import { getorders, getclients, saveorders } from '../../data/seedextract.js';
+import { getorders, getclients, saveorders } from '../../data/datafetch.js';
 
 function formatDate(date) {
     if (!date) return '';
     const [year, month, day] = date.split('-');
     return `${day}-${month}-${year}`;
 }
-const clients = getclients();
+const clients = await getclients();
 const clientmap = clients.reduce((acc, client) => {
     acc[client.id] = client.name;
     return acc;

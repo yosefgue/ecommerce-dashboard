@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import style from './products.module.css';
 import { Button, Table, Space, Tooltip, Modal, Form, Input, Select, InputNumber } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import { getproducts, getcategories, saveproducts } from '../../data/seedextract.js';
+import { getproducts, getcategories, saveproducts } from '../../data/datafetch.js';
 
 export default function Products() {
     const [categories] = useState(() => getcategories());
